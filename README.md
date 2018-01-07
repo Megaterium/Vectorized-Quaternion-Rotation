@@ -2,18 +2,18 @@
 
 Fast implementation of a vectorized function to rotate vectors using quaternions in python
 
-The function takes as input an array of vectors that you want to rotate, an array of axis and the angles for each rotation. 
+The function takes as input an array of vectors that will be rotated, an array of axis and the angles for each rotation. 
 
-The functio will discard the real part and return the vector part of the quaternions in a numpy array. 
+The function will discard the real part and return the vector part of the quaternions in a numpy array. 
 
-You need to install the [Quaternion](https://github.com/moble/quaternion) library, which is implemented in numpy so the function is really fast. 
+You need to install the [Quaternion](https://github.com/moble/quaternion) library. This library was implemented in numpy so it is really fast. 
 
 Test:
 
 Here we create a random numpy array of pairs of vectors (100 samples with 2 pairs each). I used this example just because it make sense for my original application, the last dimension in my vector correspond to x,y,z possitions. 
 We also create a random array of rotation axis and a random array of rotation angles. 
 
-Then we call the function v_prim = rotate_vect(angles,v_,axis)
+Then we call the function v_primes = rotate_vect(angles,v_,axis)
 
 ```python
 import numpy as np
@@ -61,6 +61,7 @@ bc = c - b
 cosine_angle = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc))
 angle = np.arccos(cosine_angle)
 
+# Compare the calculated angle between the V vector and the V_prime vector (they must be equal).
 print(np.degrees(angle),angles[0])
 
 ```
