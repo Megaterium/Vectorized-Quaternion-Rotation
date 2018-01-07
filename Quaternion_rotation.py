@@ -3,7 +3,7 @@ import numpy as np
 
 def rotate_vect(angles,vect,axis):
     '''
-    Rotate an array of vectors useng Quaternions
+    Rotate an array of vectors using Quaternions
     params:
     angles = array of angles that will be used for rotation
     vect   = array of vectors that will be rotated
